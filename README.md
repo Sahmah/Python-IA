@@ -1,4 +1,4 @@
-Importação do LabelEncoder
+## Importação do LabelEncoder
 Primeiro, importamos LabelEncoder da biblioteca sklearn.preprocessing. O LabelEncoder é usado para converter valores categóricos em valores numéricos.
 
 Codificação da coluna "profissao"
