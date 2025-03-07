@@ -23,41 +23,62 @@ Criamos x removendo as colunas "score_credito" (que é nosso alvo) e "id_cliente
 ## Separação dos dados em treino e teste
 Importamos train_test_split da biblioteca sklearn.model_selection.
 Depois, usamos train_test_split() para dividir os dados em duas partes:
-x_treino e y_treino: usados para treinar o modelo.
-x_teste e y_teste: usados para testar o modelo.
+<div>
+  x_treino e y_treino: usados para treinar o modelo.
+</div>
+<div>
+  x_teste e y_teste: usados para testar o modelo.
+</div>
 Definimos test_size=0.3, o que significa que 30% dos dados serão usados para teste e 70% para treino.
 
 ## Importação dos Modelos
 Importamos dois algoritmos de machine learning do sklearn:
-RandomForestClassifier (um modelo baseado em árvores de decisão).
+<div>
+  RandomForestClassifier (um modelo baseado em árvores de decisão).
+</div>
 KNeighborsClassifier (um modelo baseado em vizinhos mais próximos – KNN).
 
 ## Criação dos Modelos
 Criamos dois modelos de IA:
-modelo_arvoredecisao → um classificador baseado em Random Forest.
+<div>
+  modelo_arvoredecisao → um classificador baseado em Random Forest.
+</div>
 modelo_knn → um classificador baseado no algoritmo KNN.
 
 ## Treinamento dos Modelos
-
-modelo_arvoredecisao.fit(x_treino, y_treino): Treinamos o modelo de árvore de decisão usando os dados de treino.
+<div>
+  modelo_arvoredecisao.fit(x_treino, y_treino): Treinamos o modelo de árvore de decisão usando os dados de treino.
+</div>
 modelo_knn.fit(x_treino, y_treino): Treinamos o modelo KNN usando os mesmos dados de treino.
 
 ## Previsão de testes
 Depois de treinar os modelos, usamos predict() para fazer previsões nos dados de teste:
-previsao_arvoredecisao = modelo_arvoredecisao.predict(x_teste): O modelo de árvore de decisão faz previsões com base nos dados de teste.
+<div>
+  previsao_arvoredecisao = modelo_arvoredecisao.predict(x_teste): O modelo de árvore de decisão faz previsões com base nos dados de teste.
+</div>
 previsao_knn = modelo_knn.predict(x_teste): O modelo KNN faz o mesmo.
 
 ## Calculando a Acurácia
 Importamos accuracy_score da biblioteca sklearn.metrics, que mede a precisão do modelo comparando os valores reais (y_teste) com as previsões feitas pelos modelos.
-accuracy_score(y_teste, previsao_arvoredecisao): Calculamos a acurácia do modelo de árvore de decisão.
-accuracy_score(y_teste, previsao_knn): Calculamos a acurácia do modelo KNN.
-Usamos display() para mostrar os resultados na tela.
+<div>
+       accuracy_score(y_teste, previsao_arvoredecisao): Calculamos a acurácia do modelo de árvore de decisão.
+</div>
+<div>
+  accuracy_score(y_teste, previsao_knn): Calculamos a acurácia do modelo KNN.
+</div>
+<div>
+  Usamos display() para mostrar os resultados na tela.
+</div>
 Usamos pd.read_csv("novos_clientes.csv") para carregar uma nova tabela com informações de clientes que ainda não têm um score de crédito definido.
 
 ## Codificação das colunas categóricas
 Como os modelos foram treinados com valores numéricos, precisamos transformar os dados categóricos da nova tabela da mesma forma que fizemos antes:
-profissao: Aplicamos codificador_profissao.transform() para converter profissões em números.
-mix_credito: Aplicamos codificador_credito.transform() para converter esse atributo em números.
+<div>
+  profissao: Aplicamos codificador_profissao.transform() para converter profissões em números.
+</div>
+<div>
+  mix_credito: Aplicamos codificador_credito.transform() para converter esse atributo em números.
+</div>
 comportamento_pagamento: Aplicamos codificador_pagamento.transform() para transformar essa coluna.
 
 ## Exibição da tabela transformada
@@ -65,4 +86,6 @@ Usamos display(tabela_novos_clientes) para visualizar a nova tabela e conferir s
 
 ## Fazendo previsões com o modelo treinado
 nova_previsao = modelo_arvoredecisao.predict(tabela_novos_clientes): Utilizamos o modelo de árvore de decisão para prever o score de crédito dos novos clientes.
-display(nova_previsao): Exibimos as previsões para ver quais scores foram atribuídos.
+<div>
+  display(nova_previsao): Exibimos as previsões para ver quais scores foram atribuídos.
+</div>
